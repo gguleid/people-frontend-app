@@ -1,0 +1,91 @@
+// --------------------------
+// VARIABLES
+// --------------------------
+$maincolor: #552583;
+$contrastcolor: #fdb927;
+
+@mixin white-text-black-bg {
+    color: $contrastcolor;
+    background-color: $maincolor;
+}
+
+@mixin black-text-white-bg {
+    color: $maincolor;
+    background-color: $contrastcolor;
+}
+
+
+// --------------------------
+// Header
+//
+
+body {
+    margin: 0;
+    font-family: Helvetica;
+}
+
+// --------------------------
+// Header
+// --------------------------
+
+nav {
+    @include white-text-black-bg;
+    display: flex;
+    justify-content: flex-start;
+
+    a {
+        @include white-text-black-bg;
+        text-decoration: none;
+        div {
+            margin: 10px;
+            font-size: large;
+            font-weight: bolder;
+        }
+    }
+}
+
+// --------------------------
+// Form
+// --------------------------
+
+section,
+div {
+    form {
+        input {
+            @include white-text-black-bg;
+            padding: 10px;
+            font-size: 1.1em;
+            margin: 10px;
+            font-weight: bolder;
+            text-align: center;
+
+            &[type="submit"]:hover {
+                @include black-text-white-bg;
+            }
+        }
+    }
+}
+
+// --------------------------
+// Button
+// --------------------------
+
+button#delete {
+    @include white-text-black-bg;
+    display: block;
+    margin:auto;
+    font-size: 1.3em;
+    padding: 10px;
+   
+}
+
+// --------------------------
+// Images
+// --------------------------
+
+img {
+    width: 500px;
+    height: 500px;
+    border-radius: 90px;
+    object-fit: cover;
+}
